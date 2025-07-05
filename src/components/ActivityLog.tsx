@@ -18,6 +18,28 @@ interface ActivityLogProps {
   petName: string;
 }
 
+// Fallback function if date-fns has issues
+const formatTimeAgo = (dateString: string): string => {
+  try {
+    return formatDistance(new Date(dateString), new Date(), { 
+      addSuffix: true 
+    });
+  } catch (error) {
+    // Simple fallback if date-fns fails
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffSec = Math.round(diffMs / 1000);
+    const diffMin = Math.round(diffSec / 60);
+    const diffHr = Math.round(diffMin / 60);
+    
+    if (diffSec < 60) return `${diffSec} seconds ago`;
+    if (diffMin < 60) return `${diffMin} minutes ago`;
+    if (diffHr < 24) return `${diffHr} hours ago`;
+    return `${Math.round(diffHr / 24)} days ago`;
+  }
+};
+
 export function ActivityLog({ activities, petName }: ActivityLogProps) {
   if (activities.length === 0) {
     return (
@@ -81,9 +103,7 @@ export function ActivityLog({ activities, petName }: ActivityLogProps) {
                   {getActivityName(activity.type)}
                 </p>
                 <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">
-                  {formatDistance(new Date(activity.timestamp), new Date(), { 
-                    addSuffix: true 
-                  })}
+                  {formatTimeAgo(activity.timestamp)}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground truncate">
