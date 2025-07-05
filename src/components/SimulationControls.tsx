@@ -5,7 +5,7 @@ import { ActivityType } from '../lib/types';
 import { 
   GitCommit, 
   GitPullRequest, 
-  CodeReview, 
+  Code, 
   GitMerge,
   Bug, 
   CheckCircle,
@@ -69,7 +69,7 @@ export function SimulationControls({
             className="flex flex-col h-auto py-3 px-2"
             onClick={() => onActivityGenerated('pr_review')}
           >
-            <CodeReview weight="fill" className="mb-1 h-5 w-5" />
+            <Code weight="fill" className="mb-1 h-5 w-5" />
             <span className="text-xs">Review PR</span>
           </Button>
           
