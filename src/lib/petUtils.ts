@@ -96,6 +96,21 @@ export function createPetPersonality(traits: string[]): PetPersonality {
   };
 }
 
+// Fallback function for calculating days difference if date-fns has issues
+function calculateDaysBetween(dateStr1: string | null, dateStr2: Date): number {
+  if (!dateStr1) return -1;
+  
+  try {
+    return differenceInDays(dateStr2, parseISO(dateStr1));
+  } catch (error) {
+    // Simple fallback
+    const date1 = new Date(dateStr1);
+    const date2 = dateStr2;
+    const diffTime = Math.abs(date2.getTime() - date1.getTime());
+    return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  }
+}
+
 export function updatePetState(
   currentState: PetState,
   activityLogs: ActivityLog[],
@@ -117,8 +132,7 @@ export function updatePetState(
   // Calculate streak days
   if (newState.lastActivity) {
     const today = new Date();
-    const lastActivity = parseISO(newState.lastActivity);
-    const daysSinceActivity = differenceInDays(today, lastActivity);
+    const daysSinceActivity = calculateDaysBetween(newState.lastActivity, today);
     
     if (daysSinceActivity <= 1) {
       newState.streakDays = newState.streakDays + 1;
@@ -323,8 +337,8 @@ export function getReactionForActivity(
     ]
   };
   
-  const responses = defaultResponses[activityType];
-  return responses[Math.floor(Math.random() * responses.length)];
+  const activityResponses = defaultResponses[activityType];
+  return activityResponses[Math.floor(Math.random() * activityResponses.length)];
 }
 
 function getActivityName(type: ActivityType): string {
