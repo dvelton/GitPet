@@ -1,23 +1,45 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# 🐾 GitPet
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+**Your GitHub activity just got a little cuter.**
+GitPet is a digital companion that grows, thrives, and plays based on your GitHub contributions. Commits, PRs, issues, and more all feed your GitPet—keeping it happy, healthy, and evolving as you code.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+---
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+## 🎮 How It Works
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+Try out a simulation [here](https://gh.io/gitpet). Every time you interact with GitHub, your GitPet notices! Here's how your activity affects your pet:
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+| GitHub Action          | Effect on GitPet            |
+| ---------------------- | --------------------------- |
+| ✅ Commit code          | Feeds your pet              |
+| 🔁 Open a pull request | Boosts energy               |
+| 🐛 Open/close issues   | Adds experience             |
+| 💬 Review a PR         | Increases friendliness      |
+| 💤 Go inactive         | Pet gets a little lonely... |
 
-📄 License For Spark Template Resources 
+The more consistent your contributions, the happier and more vibrant your GitPet becomes.
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+---
+
+## 🧩 Features
+
+* Live pet dashboard synced with GitHub activity
+* Contribution-based leveling and evolution system
+* Multiple pet types with unique personalities
+* Friendly reminders when your pet needs attention
+* Dark mode for late-night coding sessions 🌙
+
+---
+
+## 💡 Ideas in the Works
+
+* Team pets for orgs and dev squads
+* Leaderboards & community gardens
+* GitPet accessories & seasonal themes
+* Offline pet journals or CLI integration
+
+---
+
+## 🐶 License
+
+[MIT License](LICENSE)
