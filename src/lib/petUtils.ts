@@ -337,8 +337,8 @@ export function getReactionForActivity(
     ]
   };
   
-  const responses = defaultResponses[activityType];
-  return responses[Math.floor(Math.random() * responses.length)];
+  const activityResponses = defaultResponses[activityType];
+  return activityResponses[Math.floor(Math.random() * activityResponses.length)];
 }
 
 function getActivityName(type: ActivityType): string {
