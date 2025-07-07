@@ -23,7 +23,7 @@ The more consistent your contributions, the happier and more vibrant your GitPet
 
 ## 🧩 Features
 
-* Live pet dashboard synced with GitHub activity
+* Live dashboard synced with GitHub activity
 * Contribution-based leveling and evolution system
 * Multiple pet types with unique personalities
 * Friendly reminders when your pet needs attention
